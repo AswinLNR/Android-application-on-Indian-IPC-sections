@@ -1,0 +1,196 @@
+package com.lawaware.lawawareapp;
+
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+
+public class Imagecapture extends AppCompatActivity {
+    FileOutputStream fileoutputstream;
+    Cursor c;
+    Bitmap b;
+    String address,location;
+    ByteArrayOutputStream b1;
+    File file;
+    String photoPath = null;
+    private static final int CAMERA_REQUEST = 1888;
+   // MyDataBase myDataBase;
+    Intent cameraIntent;
+    SQLiteDatabase database;
+    byte[] img, img1;
+    private Uri mImageCaptureUri;
+String selectedImagePath;
+    ImageView mimageView;
+    private String imgPath;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_imagecapture);
+
+      //  i.putExtra("location",result);
+        mimageView = (ImageView) this.findViewById(R.id.image_from_camera);
+        Button button = (Button) this.findViewById(R.id.take_image_from_camera);
+
+
+
+
+    }
+
+    public void takeImageFromCamera(View view) {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+    }
+
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //  if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
+            Toast.makeText(this, "Block in", Toast.LENGTH_SHORT).show();
+
+            // Uri imageFileUri = data.getData();
+            // String path=getRealPathFromURI(this,imageFileUri);
+            // Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+//            String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath(data.toString());
+            // Toast.makeText(this,"Absolute path "+absolutePath,Toast.LENGTH_SHORT).show();
+            // myDataBase = new MyDataBase(getApplicationContext(), "imagedata", null, 1);
+
+            // database = myDataBase.getWritableDatabase();
+
+            //Uri uriFromPath = Uri.fromFile(new File(realPath));
+            Bitmap mphoto = (Bitmap) data.getExtras().get("data");
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            mphoto.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            img = stream.toByteArray();
+
+
+            file = new File(Environment.getExternalStorageDirectory() + "/SampleImage.png");
+
+            final String rp= Environment.getExternalStorageDirectory() + "/SampleImage.png";
+
+            try
+
+            {
+                file.createNewFile();
+
+                fileoutputstream = new FileOutputStream(file);
+
+                fileoutputstream.write(stream.toByteArray());
+
+                fileoutputstream.close();
+
+
+                //message
+
+
+                SmsManager smsManager = SmsManager.getDefault();
+
+                //smsManager.sendTextMessage("9790394379", null, " Hi admin Garbage Alert Intimation Sent to your Mail  ", null, null);
+
+
+
+            } catch (Exception e)
+
+            {
+
+                e.printStackTrace();
+
+            }
+            Toast.makeText(this,"Path "+rp,Toast.LENGTH_SHORT).show();
+
+
+
+
+            SQLiteDatabase db=openOrCreateDatabase("law", Context.MODE_PRIVATE,null);
+            try{
+
+
+                if (db != null) {
+                    c = db.rawQuery("SELECT * from userdetails", null);
+                    if (c.moveToFirst()) {
+                        do {
+                            address=c.getString(c.getColumnIndexOrThrow("address"));
+
+                        } while (c.moveToNext());
+                    }
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(getApplicationContext(),"Exception in extracting "+e,Toast.LENGTH_SHORT).show();
+            }
+
+           // Toast.makeText(this, "location is  "+location,Toast.LENGTH_LONG).show();
+
+
+            Thread thread = new Thread() {
+                @Override
+                public void run() {
+
+                    //
+                    //
+
+
+
+
+
+                    GMailSender sender = new GMailSender("seattlecbe4@gmail.com", "projecttoppers4");
+
+                  //  GMailSender sender = new GMailSender("hasidata@gmail.com", "hasi@12345");
+                    // Toast.makeText(getApplicationContext(),"Block in ",Toast.LENGTH_SHORT).show();
+
+                    try {
+                        // Toast.makeText(getApplicationContext(),"In try block ",Toast.LENGTH_SHORT).show();
+
+                        sender.sendMail("Email Subject", " Alert location is "+address, "seattlecbe4@gmail.com","seattlecbe4@gmail.com", rp, "");
+                        //Toast.makeText(getApplicationContext(),"Mail Sent",Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            };
+            thread.start();
+           // file.delete();
+
+            // Bitmap mphoto1=(Bitmap ) data.getAction()
+            // mimageView.setImageBitmap(mphoto);
+        }
+    }
+
+
+    public String getAbsolutePath(Uri uri) {
+        String[] projection = { MediaStore.MediaColumns.DATA };
+        @SuppressWarnings("deprecation")
+        Cursor cursor = managedQuery(uri, projection, null, null, null);
+        if (cursor != null) {
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } else
+            return null;
+    }
+
+}
+
+
+
