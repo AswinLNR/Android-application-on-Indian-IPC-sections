@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.lawaware.lawawareapp.Userlogin"
+    >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/e2"
+        android:background="@drawable/btn_login_reg_design1"
+        android:hint="Password"
+        android:textStyle="bold|italic"
+        android:textSize="23sp"
+        android:fontFamily="monospace"
+        android:inputType="textPassword"
+        tools:ignore="HardcodedText"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/e1"
+        android:layout_alignEnd="@+id/e1"
+        android:layout_alignLeft="@+id/e1"
+        android:layout_alignStart="@+id/e1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Login Process"
+        tools:textColor="@color/colorAccent"
+        android:fontFamily="monospace"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/e1"
+        android:textStyle="bold|italic"
+        android:background="@drawable/btn_login_reg_design1"
+        android:hint="Username"
+        android:textSize="23sp"
+        android:inputType="text"
+        android:layout_marginTop="46dp"
+        tools:ignore="HardcodedText"
+        android:fontFamily="monospace"
+
+        tools:style="@android:style/Widget.DeviceDefault.Light.EditText"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2" />
+
+    <Button
+        android:id="@+id/b1"
+        android:background="@drawable/btn_login_reg_design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:textColor="@color/colorAccent"
+
+        android:text="Login"
+        android:textStyle="italic"
+
+        tools:ignore="HardcodedText"
+        android:fontFamily="monospace"
+        android:layout_marginTop="52dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/e2"
+        android:layout_alignRight="@+id/e2"
+        android:layout_alignEnd="@+id/e2"
+        android:layout_alignLeft="@+id/e2"
+        android:layout_alignStart="@+id/e2" />
+
+</RelativeLayout>

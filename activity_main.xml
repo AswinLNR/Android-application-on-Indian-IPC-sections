@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    tools:context="com.lawaware.lawawareapp.MainActivity">
+
+
+    <ImageView
+        android:layout_width="130sp"
+        android:layout_height="150sp"
+        android:id="@+id/i4"
+        android:src="@drawable/userlogo"
+        android:layout_marginTop="27dp"
+        tools:ignore="ContentDescription"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="  Public User"
+        android:textStyle="bold|italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        tools:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/i2"
+        android:layout_alignLeft="@+id/i4"
+        android:layout_alignStart="@+id/i4"
+        android:layout_alignRight="@+id/i4"
+        android:layout_alignEnd="@+id/i4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText,UnknownId"
+        tools:textColor="@android:color/background_dark"
+        android:layout_marginTop="55dp"
+        android:text=" Law Aware Android  App"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="130sp"
+        android:layout_height="150sp"
+        android:id="@+id/i2"
+        android:src="@drawable/admin"
+
+        tools:ignore="ContentDescription"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+
+</RelativeLayout>

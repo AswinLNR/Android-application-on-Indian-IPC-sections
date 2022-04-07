@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:ignore="ExtraText"
+    tools:context="com.lawaware.lawawareapp.Setlawdetails"
+    ><![CDATA[
+
+
+    android:id="@+id/textView3" />
+
+
+
+
+
+    ]]>
+
+    <EditText
+        android:id="@+id/editText"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:fontFamily="monospace"
+        android:hint="Time taken for case "
+        android:inputType="textPostalAddress"
+        android:textSize="23sp"
+        android:textStyle="italic"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/e4"
+        android:layout_alignLeft="@+id/e4"
+        android:layout_alignStart="@+id/e4"
+        android:layout_alignRight="@+id/e4"
+        android:layout_alignEnd="@+id/e4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:fontFamily="monospace"
+        tools:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Law  Info Details Upload"
+        android:textSize="23sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/e3"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:fontFamily="monospace"
+        android:textStyle="bold|italic"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:textSize="23sp"
+
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/e2"
+        android:layout_alignLeft="@+id/e2"
+        android:layout_alignStart="@+id/e2"
+        android:layout_alignRight="@+id/e2"
+        android:layout_alignEnd="@+id/e2"
+        android:inputType="text"
+        android:hint="bail Details " />
+
+    <EditText
+        android:id="@+id/e2"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_height="wrap_content"
+        android:hint="punishment info"
+        android:maxLength="30"
+        android:textSize="23sp"
+        android:textStyle="italic"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/e1"
+        android:layout_alignLeft="@+id/e1"
+        android:layout_alignStart="@+id/e1"
+        android:layout_alignRight="@+id/e1"
+        android:layout_alignEnd="@+id/e1"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/e4"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:hint="Case Categories "
+        android:inputType="textEmailAddress"
+        android:maxLength="30"
+        android:textSize="23sp"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/e3"
+        android:layout_alignLeft="@+id/e3"
+        android:layout_alignStart="@+id/e3"
+        android:layout_alignRight="@+id/e3"
+        android:layout_alignEnd="@+id/e3" />
+
+    <EditText
+        android:id="@+id/e1"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Case Section"
+        android:inputType="text"
+        android:maxLength="10"
+        android:textSize="23sp"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <Button
+        android:id="@+id/b1"
+        android:background="@drawable/btn_login_reg_design"
+        android:layout_width="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_height="wrap_content"
+        android:hint=" Upload Law Details"
+        android:textColor="#d2f"
+        tools:ignore="HardcodedText"
+        tools:text="  Upload Law details "
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/e5"
+        android:layout_alignStart="@+id/e5"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <EditText
+        android:id="@+id/e5"
+        android:background="@drawable/btn_login_reg_design1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:inputType="textPostalAddress"
+        android:textSize="23sp"
+        android:textStyle="italic"
+        tools:ignore="HardcodedText"
+        android:hint="case handling court info"
+        android:layout_above="@+id/b1"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginBottom="29dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.lawaware.lawawareapp.userhome"
+
+    >
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Enter  case categories and search "
+        tools:textColor="@color/colorAccent"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText"
+
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_login_reg_design"
+
+        android:text="Search Process"
+        android:textColor="#d2f"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="83dp"
+        android:layout_below="@+id/edittext3"
+        android:layout_alignLeft="@+id/edittext3"
+        android:layout_alignStart="@+id/edittext3"
+        android:layout_alignRight="@+id/edittext3"
+        android:layout_alignEnd="@+id/edittext3" />
+
+    <EditText
+        android:id="@+id/edittext3"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_login_reg_design"
+
+        tools:ignore="HardcodedText"
+        android:textSize="16sp"
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6"
+        android:hint=" " />
+
+    <Button
+        android:text="information Share "
+        android:textColor="#d2f"
+        android:background="@drawable/btn_login_reg_design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/button4"
+        android:layout_below="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button" />
+
+
+</RelativeLayout>
